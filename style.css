@@ -58,3 +58,11 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+#limpar {
+  background: #dc3545;
+}
+
+#limpar:hover {
+  background: #b52d3a;
+}

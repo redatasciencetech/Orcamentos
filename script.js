@@ -48,3 +48,24 @@ document.getElementById("gerarIMG").addEventListener("click", async () => {
   link.href = canvas.toDataURL("image/png");
   link.click();
 });
+
+// Limpar dados
+document.getElementById("limpar").addEventListener("click", () => {
+  if (!confirm("Tem certeza que deseja limpar todos os dados?")) return;
+
+  document.getElementById("cliente").value = "";
+  document.getElementById("endereco").value = "";
+  document.getElementById("telefone").value = "";
+  document.getElementById("data").value = "";
+  document.getElementById("totalGeral").innerText = "R$ 0,00";
+
+  const tbody = document.getElementById("itens");
+  tbody.innerHTML = `
+    <tr>
+      <td><input type="number" value="1" class="qtd" /></td>
+      <td><input type="text" class="desc" placeholder="Descrição" /></td>
+      <td><input type="number" class="valor" step="0.01" /></td>
+      <td class="total">R$ 0,00</td>
+    </tr>
+  `;
+});
